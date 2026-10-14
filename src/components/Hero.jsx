@@ -1,4 +1,5 @@
 import React from "react";
+import bannerImage from "../assets/banner-stack.png";
 
 const Hero = () => {
   return (
@@ -29,7 +30,7 @@ const Hero = () => {
         </div>
 
         <div className="flex-1 flex justify-center lg:justify-end">
-        <img src="./banner-stack.png" alt="Loading" />
+        <img src={bannerImage} alt="Loading" />
         </div>
       </div>
     </section>
