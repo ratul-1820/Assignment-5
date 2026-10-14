@@ -11,7 +11,16 @@ function App() {
   const [technologies, setTechnologies] = useState([])
   const [stack, setStack] = useState([])
   const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    const fetchTechnologies = async () => {
+      const response = await fetch('/data/technologies.json')
+      const data = await response.json()
+      setTechnologies(data)
+      setLoading(false)
+    }
 
+    fetchTechnologies()
+  }, [])
 
   if (loading) {
     return (
@@ -24,7 +33,7 @@ function App() {
   return (
     <>
       <Toaster position="top-right" />
-      
+
       <Navbar />
       <Hero />
       <div className="min-h-screen bg-slate-50/50 p-6 md:p-12">
